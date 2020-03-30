@@ -36,7 +36,20 @@ class IncidentController {
       ong_id,
     });
 
-    return response.json({ id });
+    const newIncident = await connection('incidents')
+      .join('ongs', 'ongs.id', '=', 'incidents.ong_id')
+      .select([
+        'incidents.*',
+        'ongs.name',
+        'ongs.email',
+        'ongs.whatsapp',
+        'ongs.city',
+        'ongs.uf',
+      ])
+      .where('incidents.id', id)
+      .first();
+
+    return response.json(newIncident);
   }
   async delete(request: Request, response: Response) {
     const { id } = request.params;
