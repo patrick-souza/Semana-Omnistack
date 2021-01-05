@@ -11,7 +11,7 @@
     "@types/react": "^16.9.27",
     "@types/react-dom": "^16.9.0",
     "@types/yup": "^0.26.33",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "formik": "^2.1.4",
     "history": "^4.10.1",
     "immer": "^6.0.2",
